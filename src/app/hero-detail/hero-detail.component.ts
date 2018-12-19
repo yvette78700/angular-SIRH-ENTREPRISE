@@ -14,6 +14,8 @@ export class HeroDetailComponent implements OnInit {
   // @Input()  
       hero:Hero;//ici le input envoi Hero venant du pere
     // ActivatedRoute permet d'exploiter l url
+
+    
       constructor(private heroService: HeroService,private route: ActivatedRoute,private location:Location) { }
 
       ngOnInit() {
