@@ -1,0 +1,55 @@
+<!-- {{hero}} -->
+
+<h2>
+  {{hero.name}}
+</h2>
+<div><span>id:</span>{{hero.id}}</div><br>
+<div><span>name:</span>{{hero.name|uppercase}}</div><br>
+<div><span>age:</span>{{hero.age}}</div><br>
+<!-- | perment d'appliquer un filtre ex je veux hero.name en majuscule -->
+<!-- ici on met les variables -->
+
+
+      <label >name: </label>
+      <input [(ngModel)]="hero.name" placeholder="name">
+      <!-- ngmodel est un module -->
+      <!--ngModel permet une mise a jour du ts % au html et vise versa  -->
+   
+
+
+  <label >mon age:</label>
+  <input [(ngModel)]="hero.age" placeholder="age">
+
+<br><br>
+<h2>La liste des employés:</h2>
+
+<ul class="heroes">
+
+  <!-- <li *ngFor="let hero of heroes" (click)="onSelect(hero)"> -->
+      <li *ngFor="let hero of heroes"  [class.selected]="hero === selectedHero">
+        <a routerLink = "/detail/{{hero.id}}">
+          <span class="badge">{{hero.id}} - </span>{{hero.name}} - {{hero.age}} ans
+        </a>
+
+    <!-- mis a jour de la variable -->
+    <!-- hero est l'indice le tableau est heroes -->
+   
+  </li>
+
+
+</ul>
+<!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
+<!-- ici la balise est un composant -->
+<!-- met moi a jour hero avec  -->
+<!-- <div *ngIf="selectedHero">
+<h2>Les info de: {{selectedHero.name|uppercase}}</h2>
+<div><span>id:</span>{{selectedHero.id}}</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="selectedHero.name" placeholder="name">
+  </label>
+</div>
+</div> -->
+<!-- *ngFor ,*ngIf sont des directives structurelles elle sont incluse directement dans le html -->
+
+  
